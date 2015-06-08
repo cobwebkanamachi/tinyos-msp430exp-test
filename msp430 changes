@@ -1,0 +1,2193 @@
+--- ../tos430/support/make/msp/mspdebug.extra	2015-05-19 01:08:10.000000000 +0900
++++ ./support/make/msp/mspdebug.extra	2015-06-03 13:34:38.000000000 +0900
+@@ -9,7 +9,7 @@
+ MSP_DEBUG ?= mspdebug
+ 
+ ifeq ($(MSPDEBUG_DRIVER),)
+-  MSPDEBUG_DRIVER=rf2500
++  MSPDEBUG_DRIVER=sim
+ endif
+ 
+ program: $(BSL_TARGETS) $(TELOS_PROGRAM_DEPS) FORCE
+--- ../tos430/support/make/msp430f1121.target	2015-05-19 01:08:10.000000000 +0900
++++ ./support/make/msp430f1121.target	2015-06-03 13:33:57.000000000 +0900
+@@ -5,7 +5,7 @@
+ MSP_MCU = msp430f1121
+ 
+ # Disable MSP430 hardware multiply because it makes MSPGCC die
+-PFLAGS += -mmpy=none -mdisable-watchdog
++PFLAGS += -mdisable-hwmul
+ 
+ ifndef DEFAULT_PROGRAM
+ DEFAULT_PROGRAM = tos-bsl
+--- ../tos430/support/make/msp430f1132.target	2015-05-19 01:08:10.000000000 +0900
++++ ./support/make/msp430f1132.target	2015-06-03 13:33:57.000000000 +0900
+@@ -5,7 +5,7 @@
+ MSP_MCU = msp430f1132
+ 
+ # Disable MSP430 hardware multiply because it makes MSPGCC die
+-PFLAGS += -mmpy=none -mdisable-watchdog
++PFLAGS += -mdisable-hwmul
+ 
+ ifndef DEFAULT_PROGRAM
+ DEFAULT_PROGRAM = tos-bsl
+--- ../tos430/support/make/msp430f1232.target	2015-05-19 01:08:10.000000000 +0900
++++ ./support/make/msp430f1232.target	2015-06-03 13:33:57.000000000 +0900
+@@ -5,7 +5,7 @@
+ MSP_MCU = msp430f1232
+ 
+ # Disable MSP430 hardware multiply because it makes MSPGCC die
+-PFLAGS += -mmpy=none -mdisable-watchdog
++PFLAGS += -mdisable-hwmul
+ 
+ ifndef DEFAULT_PROGRAM
+ DEFAULT_PROGRAM = tos-bsl
+--- ../tos430/support/make/msp430f1611.target	2015-05-19 01:08:10.000000000 +0900
++++ ./support/make/msp430f1611.target	2015-06-03 13:33:57.000000000 +0900
+@@ -5,7 +5,7 @@
+ MSP_MCU = msp430f1611
+ 
+ # Disable MSP430 hardware multiply because it makes MSPGCC die
+-PFLAGS += -mmpy=none -mdisable-watchdog
++PFLAGS += -mdisable-hwmul
+ 
+ ifndef DEFAULT_PROGRAM
+ DEFAULT_PROGRAM = tos-bsl
+--- ../tos430/support/make/msp430f2012.target	2015-05-19 01:08:10.000000000 +0900
++++ ./support/make/msp430f2012.target	2015-06-03 13:33:57.000000000 +0900
+@@ -5,7 +5,7 @@
+ MSP_MCU = msp430f2012
+ 
+ # Disable MSP430 hardware multiply because it makes MSPGCC die
+-PFLAGS += -mmpy=none -mdisable-watchdog
++PFLAGS += -mdisable-hwmul
+ 
+ ifndef DEFAULT_PROGRAM
+ DEFAULT_PROGRAM = mspdebug
+--- ../tos430/support/make/msp430f2013.target	2015-05-19 01:08:10.000000000 +0900
++++ ./support/make/msp430f2013.target	2015-06-03 13:33:57.000000000 +0900
+@@ -5,7 +5,7 @@
+ MSP_MCU = msp430f2013
+ 
+ # Disable MSP430 hardware multiply because it makes MSPGCC die
+-PFLAGS += -mmpy=none -mdisable-watchdog
++PFLAGS += -mdisable-hwmul
+ 
+ ifndef DEFAULT_PROGRAM
+ DEFAULT_PROGRAM = mspdebug
+--- ../tos430/support/make/msp430f2131.target	2015-05-19 01:08:10.000000000 +0900
++++ ./support/make/msp430f2131.target	2015-06-03 13:33:57.000000000 +0900
+@@ -5,7 +5,7 @@
+ MSP_MCU = msp430f2131
+ 
+ # Disable MSP430 hardware multiply because it makes MSPGCC die
+-PFLAGS += -mmpy=none -mdisable-watchdog
++PFLAGS += -mdisable-hwmul
+ 
+ ifndef DEFAULT_PROGRAM
+ DEFAULT_PROGRAM = tos-bsl
+--- ../tos430/support/make/msp430f2132.target	2015-05-19 01:08:10.000000000 +0900
++++ ./support/make/msp430f2132.target	2015-06-03 13:33:57.000000000 +0900
+@@ -5,7 +5,7 @@
+ MSP_MCU = msp430f2132
+ 
+ # Disable MSP430 hardware multiply because it makes MSPGCC die
+-PFLAGS += -mmpy=none -mdisable-watchdog
++PFLAGS += -mdisable-hwmul
+ 
+ ifndef DEFAULT_PROGRAM
+ DEFAULT_PROGRAM = mspdebug
+--- ../tos430/support/make/msp430f2274.target	2015-05-19 01:08:10.000000000 +0900
++++ ./support/make/msp430f2274.target	2015-06-03 13:33:57.000000000 +0900
+@@ -5,7 +5,7 @@
+ MSP_MCU = msp430f2274
+ 
+ # Disable MSP430 hardware multiply because it makes MSPGCC die
+-PFLAGS += -mmpy=none -mdisable-watchdog
++PFLAGS += -mdisable-hwmul
+ 
+ ifndef DEFAULT_PROGRAM
+ DEFAULT_PROGRAM = mspdebug
+--- ../tos430/support/make/msp430g2211.target	2015-05-19 01:08:10.000000000 +0900
++++ ./support/make/msp430g2211.target	2015-06-03 13:33:57.000000000 +0900
+@@ -5,7 +5,7 @@
+ MSP_MCU = msp430g2211
+ 
+ # Disable MSP430 hardware multiply because it makes MSPGCC die
+-PFLAGS += -mmpy=none -mdisable-watchdog
++PFLAGS += -mdisable-hwmul
+ 
+ ifndef DEFAULT_PROGRAM
+ DEFAULT_PROGRAM = mspdebug
+--- ../tos430/support/make/msp430g2231.target	2015-05-19 01:08:10.000000000 +0900
++++ ./support/make/msp430g2231.target	2015-06-03 13:33:57.000000000 +0900
+@@ -5,7 +5,7 @@
+ MSP_MCU = msp430g2231
+ 
+ # Disable MSP430 hardware multiply because it makes MSPGCC die
+-PFLAGS += -mmpy=none -mdisable-watchdog
++PFLAGS += -mdisable-hwmul
+ 
+ ifndef DEFAULT_PROGRAM
+ DEFAULT_PROGRAM = mspdebug
+--- ../tos430/support/make/msp430g2452.target	2015-05-19 01:08:10.000000000 +0900
++++ ./support/make/msp430g2452.target	2015-06-03 13:33:57.000000000 +0900
+@@ -1,11 +1,10 @@
+ # -*- mode: makefile-gmake; mode: flyspell-prog; -*-
+-
+-PLATFORM ?= msp430g2452
+-
++#PLATFORM ?= msp430g2452
++PLATFORM = msp430g2452
+ MSP_MCU = msp430g2452
+ 
+ # Disable MSP430 hardware multiply because it makes MSPGCC die
+-PFLAGS += -mmpy=none -mdisable-watchdog
++PFLAGS += -mdisable-hwmul -mdisable-watchdog
+ 
+ ifndef DEFAULT_PROGRAM
+ DEFAULT_PROGRAM = mspdebug
+--- ../tos430/tos/chips/ds1624/HplDs1624.nc	2015-05-19 01:08:10.000000000 +0900
++++ ./tos/chips/ds1624/HplDs1624.nc	2015-06-03 11:54:38.000000000 +0900
+@@ -35,11 +35,7 @@
+  * @author Tadashi G. Takaoka <tadashi.g.takaoka@gmail.com>
+  */
+ interface HplDs1624 {
+-    command error_t read(uint8_t cmd_len, uint8_t *cmd, uint8_t data_len, uint8_t *data);
+-    command error_t write(uint8_t cmd_len, uint8_t *cmd, uint8_t data_len, uint8_t *data);
+-
+-    event void readDone(error_t error, uint8_t *cmd, uint8_t data_len, uint8_t *data);
+-    event void writeDone(error_t error, uint8_t *cmd, uint8_t data_len, uint8_t *data);
++    
+ }
+ 
+ /*
+--- ../tos430/tos/chips/max6951/HplMax6951.nc	2015-05-19 01:08:10.000000000 +0900
++++ ./tos/chips/max6951/HplMax6951.nc	2015-06-03 11:54:38.000000000 +0900
+@@ -44,7 +44,7 @@
+     command void setIntensity(uint8_t intensity);
+     command void setScanLimit(uint8_t digits);
+     command void setConfig(uint8_t config);
+-    command void displayTest(bool enableTest);
++    command void displayTest();
+ }
+ 
+ /*
+--- ../tos430/tos/chips/max6951/HplMax6951C.nc	2015-05-19 01:08:10.000000000 +0900
++++ ./tos/chips/max6951/HplMax6951C.nc	2015-06-03 11:54:38.000000000 +0900
+@@ -66,7 +66,6 @@
+             call Hpl.setConfig(MAX6951_CONFIG_NORMAL | MAX6951_CONFIG_BLINK_1_0S |
+                                MAX6951_CONFIG_BLINK_OFF | MAX6951_CONFIG_BLINK_ASYNC |
+                                MAX6951_CONFIG_CLEAR_ASYNC);
+-            call Hpl.displayTest(FALSE);
+             call Hpl.setScanLimit(uniqueCount(resourceName));
+             call Hpl.setDecodeMode(0x00); /* segment mode */
+             call Hpl.setIntensity(1);
+@@ -102,8 +101,8 @@
+         write(ADDRESS_CONFIG | config);
+     }
+ 
+-    command void Hpl.displayTest(bool enableTest) {
+-        write(ADDRESS_DISPLAY_TEST | enableTest);
++    command void Hpl.displayTest() {
++        write(ADDRESS_DISPLAY_TEST | 1);
+     }
+ }
+ 
+--- ../tos430/tos/chips/max7219/HplMax7219.nc	2015-05-19 01:08:10.000000000 +0900
++++ ./tos/chips/max7219/HplMax7219.nc	2015-06-03 11:54:38.000000000 +0900
+@@ -44,7 +44,7 @@
+     command void setIntensity(uint8_t intensity);
+     command void setScanLimit(uint8_t digits);
+     command void setConfig(uint8_t config);
+-    command void displayTest(bool enableTest);
++    command void displayTest();
+ }
+ 
+ /*
+--- ../tos430/tos/chips/max7219/HplMax7219C.nc	2015-05-19 01:08:10.000000000 +0900
++++ ./tos/chips/max7219/HplMax7219C.nc	2015-06-03 11:54:38.000000000 +0900
+@@ -65,7 +65,6 @@
+             call Load.makeOutput();
+             call SpiControl.start();
+             call Hpl.setConfig(MAX7219_CONFIG_NORMAL);
+-            call Hpl.displayTest(FALSE);
+             call Hpl.setScanLimit(uniqueCount(resourceName));
+             call Hpl.setDecodeMode(0x00); /* segment mode */
+             call Hpl.setIntensity(15);
+@@ -82,7 +81,7 @@
+     }
+ 
+     command void Hpl.setDigit(uint8_t digit, uint8_t segments) {
+-        write(((digit << 8) + ADDRESS_DIGIT0) | segments);
++        write((digit << 8) | ADDRESS_DIGIT0 | segments);
+     }
+ 
+     command void Hpl.setDecodeMode(uint8_t modes) {
+@@ -94,15 +93,15 @@
+     }
+ 
+     command void Hpl.setScanLimit(uint8_t digits) {
+-        write(ADDRESS_SCAN_LIMIT | (digits - 1));
++        write(ADDRESS_SCAN_LIMIT | digits);
+     }
+ 
+     command void Hpl.setConfig(uint8_t config) {
+         write(ADDRESS_CONFIG | config);
+     }
+ 
+-    command void Hpl.displayTest(bool enableTest) {
+-        write(ADDRESS_DISPLAY_TEST | enableTest);
++    command void Hpl.displayTest() {
++        write(ADDRESS_DISPLAY_TEST | 1);
+     }
+ }
+ 
+--- ../tos430/tos/chips/max7219/Max7219.h	2015-05-19 01:08:10.000000000 +0900
++++ ./tos/chips/max7219/Max7219.h	2015-06-03 11:54:38.000000000 +0900
+@@ -33,8 +33,8 @@
+ #ifndef _H_MAX7219_H
+ #define _H_MAX7219_H
+ 
+-#define MAX7219_CONFIG_SHUTDOWN    0x00
+-#define MAX7219_CONFIG_NORMAL      0x01
++#define MAX7219_CONFIG_SHUTDOWN    0x01
++#define MAX7219_CONFIG_NORMAL      0x00
+ 
+ #endif
+ 
+--- ../tos430/tos/chips/msp430-small/msp430hardware.h	2015-05-19 01:08:10.000000000 +0900
++++ ./tos/chips/msp430-small/msp430hardware.h	2015-06-03 15:09:38.000000000 +0900
+@@ -38,9 +38,9 @@
+ #define _H_msp430hardware_h
+ 
+ #include <msp430.h>
+-#include <legacymsp430.h>
++#include <signal.h>
+ #include "msp430regtypes.h"
+-#include "msp430errata.h"
++/*#include "msp430errata.h" YABAI*/
+ 
+ #ifdef __MSP430_TI_HEADERS__
+ 
+@@ -385,6 +385,7 @@
+ void __nesc_disable_interrupt(void) @safe()
+ {
+   dint();
++  nop();
+ }
+ 
+ void __nesc_enable_interrupt(void) @safe()
+--- ../tos430/tos/chips/msp430-small/pins/HplMsp430GeneralIOC.nc	2015-05-19 01:08:10.000000000 +0900
++++ ./tos/chips/msp430-small/pins/HplMsp430GeneralIOC.nc	2015-06-03 14:54:55.000000000 +0900
+@@ -112,6 +112,101 @@
+   provides interface HplMsp430GeneralIO as Port66;
+   provides interface HplMsp430GeneralIO as Port67;
+ #endif
++
++  // provides special ports explicitly 
++
++#ifdef __MSP430_HAS_UART0__
++  provides interface HplMsp430GeneralIO as STE0;
++  provides interface HplMsp430GeneralIO as SIMO0;
++  provides interface HplMsp430GeneralIO as SOMI0;
++  provides interface HplMsp430GeneralIO as UCLK0;
++  provides interface HplMsp430GeneralIO as UTXD0;
++  provides interface HplMsp430GeneralIO as URXD0;
++#ifdef __MSP430_HAS_I2C__
++  provides interface HplMsp430GeneralIO as SDA;
++  provides interface HplMsp430GeneralIO as SCL;
++#endif
++#endif
++
++#ifdef __MSP430_HAS_UART1__
++  provides interface HplMsp430GeneralIO as STE1;
++  provides interface HplMsp430GeneralIO as SIMO1;
++  provides interface HplMsp430GeneralIO as SOMI1;
++  provides interface HplMsp430GeneralIO as UCLK1;
++  provides interface HplMsp430GeneralIO as UTXD1;
++  provides interface HplMsp430GeneralIO as URXD1;
++#endif
++
++#ifdef __MSP430_HAS_ADC12__
++  provides interface HplMsp430GeneralIO as ADC0;
++  provides interface HplMsp430GeneralIO as ADC1;
++  provides interface HplMsp430GeneralIO as ADC2;
++  provides interface HplMsp430GeneralIO as ADC3;
++  provides interface HplMsp430GeneralIO as ADC4;
++  provides interface HplMsp430GeneralIO as ADC5;
++  provides interface HplMsp430GeneralIO as ADC6;
++  provides interface HplMsp430GeneralIO as ADC7;
++#endif
++
++#ifdef __MSP430_HAS_DAC12_2__
++  provides interface HplMsp430GeneralIO as DAC0;
++  provides interface HplMsp430GeneralIO as DAC1;
++#endif
++
++#ifdef __MSP430_HAS_SVS__
++  provides interface HplMsp430GeneralIO as SVSIN;
++  provides interface HplMsp430GeneralIO as SVSOUT;
++#endif
++
++#if defined(__MSP430_HAS_USCI__) || defined(__MSP430_HAS_USCI_A0__) || \
++    defined(__MSP430_HAS_USCI_AB0__)
++#if 0 /* YABAI */
++  provides interface HplMsp430GeneralIO as UCA0CLK;
++  provides interface HplMsp430GeneralIO as UCA0STE;
++  provides interface HplMsp430GeneralIO as UCA0TXD;
++  provides interface HplMsp430GeneralIO as UCA0RXD;
++  provides interface HplMsp430GeneralIO as UCA0SIMO;
++  provides interface HplMsp430GeneralIO as UCA0SOMI;
++#endif /* YABAI */
++#endif
++
++#if defined(__MSP430_HAS_USCI__) || defined(__MSP430_HAS_USCI_B0__) || \
++    defined(__MSP430_HAS_USCI_AB0__)
++#if 0 /* YABAI */
++  provides interface HplMsp430GeneralIO as UCB0CLK;
++  provides interface HplMsp430GeneralIO as UCB0STE;
++  provides interface HplMsp430GeneralIO as UCB0SIMO;
++  provides interface HplMsp430GeneralIO as UCB0SOMI;
++  provides interface HplMsp430GeneralIO as UCB0SDA;
++  provides interface HplMsp430GeneralIO as UCB0SCL;
++#endif /* YABAI */
++#endif
++
++#if defined(__MSP430_HAS_USCI_A1__) || defined(__MSP430_HAS_USCI_AB1__)
++  provides interface HplMsp430GeneralIO as UCA1CLK;
++  provides interface HplMsp430GeneralIO as UCA1STE;
++  provides interface HplMsp430GeneralIO as UCA1TXD;
++  provides interface HplMsp430GeneralIO as UCA1RXD;
++  provides interface HplMsp430GeneralIO as UCA1SIMO;
++  provides interface HplMsp430GeneralIO as UCA1SOMI;
++#endif
++
++#if defined(__MSP430_HAS_USCI_B1__) || defined(__MSP430_HAS_USCI_AB1__)
++  provides interface HplMsp430GeneralIO as UCB1CLK;
++  provides interface HplMsp430GeneralIO as UCB1STE;
++  provides interface HplMsp430GeneralIO as UCB1SIMO;
++  provides interface HplMsp430GeneralIO as UCB1SOMI;
++  provides interface HplMsp430GeneralIO as UCB1SDA;
++  provides interface HplMsp430GeneralIO as UCB1SCL;
++#endif
++
++#if defined(__MSP430_HAS_USI__)
++  provides interface HplMsp430GeneralIO as USISDO;
++  provides interface HplMsp430GeneralIO as USISDI;
++  provides interface HplMsp430GeneralIO as USISCLK;
++  provides interface HplMsp430GeneralIO as USISCL;
++  provides interface HplMsp430GeneralIO as USISDA;
++#endif
+ }
+ implementation
+ {
+@@ -311,4 +406,111 @@
+   Port66 = P66;
+   Port67 = P67;
+ #endif
++
++#ifdef __msp430x14x
++  STE0 = P30;
++  SIMO0 = P31;
++  SOMI0 = P32;
++  UCLK0 = P33;
++  UTXD0 = P34;
++  URXD0 = P35;
++
++  STE1 = P50;
++  SIMO1 = P51;
++  SOMI1 = P52;
++  UCLK1 = P53;
++  UTXD1 = P36;
++  URXD1 = P37;
++
++  ADC0 = P60;
++  ADC1 = P61;
++  ADC2 = P62;
++  ADC3 = P63;
++  ADC4 = P64;
++  ADC5 = P65;
++  ADC6 = P66;
++  ADC7 = P67;
++#endif
++
++#ifdef __msp430x16x
++  STE0 = P30;
++  SIMO0 = P31;
++  SDA = P31;
++  SOMI0 = P32;
++  UCLK0 = P33;
++  SCL = P33;
++  UTXD0 = P34;
++  URXD0 = P35;
++
++  STE1 = P50;
++  SIMO1 = P51;
++  SOMI1 = P52;
++  UCLK1 = P53;
++  UTXD1 = P36;
++  URXD1 = P37;
++
++  ADC0 = P60;
++  ADC1 = P61;
++  ADC2 = P62;
++  ADC3 = P63;
++  ADC4 = P64;
++  ADC5 = P65;
++  ADC6 = P66;
++  ADC7 = P67;
++
++  DAC0 = P66;
++  DAC1 = P67;
++
++  SVSIN = P67;
++  SVSOUT = P57;
++#endif
++
++#ifdef __msp430x12x2
++  STE0 = P30;
++  SIMO0 = P31;
++  SOMI0 = P32;
++  UCLK0 = P33;
++  UTXD0 = P34;
++  URXD0 = P35;
++#endif
++
++#ifdef __msp430x21x2
++  UCA0CLK = P30;
++  UCA0STE = P33;
++  UCA0TXD = P34;
++  UCA0RXD = P35;
++  UCA0SIMO = P34;
++  UCA0SOMI = P35;
++
++  UCB0CLK = P33;  
++  UCB0STE = P30;
++  UCB0SIMO = P31;
++  UCB0SOMI = P32;
++  UCB0SDA = P31;
++  UCB0SCL = P32;
++#endif
++
++#if defined(__msp430x22x2) || defined(__msp430x22x4)
++  UCA0CLK = P30;
++  UCA0STE = P33;
++  UCA0TXD = P34;
++  UCA0RXD = P35;
++  UCA0SIMO = P34;
++  UCA0SOMI = P35;
++
++  UCB0CLK = P33;  
++  UCB0STE = P30;
++  UCB0SIMO = P31;
++  UCB0SOMI = P32;
++  UCB0SDA = P31;
++  UCB0SCL = P32;
++#endif
++
++#if defined(__MSP430_HAS_USI__)
++  USISCLK = P15;
++  USISDO = P16;
++  USISDI = P17;
++  USISCL = P16;
++  USISDA = P17;
++#endif
+ }
+--- ../tos430/tos/chips/msp430-small/timer/Msp430ClockP.nc	2015-05-19 01:08:10.000000000 +0900
++++ ./tos/chips/msp430-small/timer/Msp430ClockP.nc	2015-06-03 11:54:38.000000000 +0900
+@@ -50,11 +50,14 @@
+ {
+   MSP430REG_NORACE(IE1);
+   MSP430REG_NORACE(TACTL);
+-#if defined(__MSP430_HAS_T1A2__) || defined(__MSP430_HAS_T1A3__)
++  MSP430REG_NORACE(TAIV);
++#if defined(__MSP430_HAS_T1A2__)
+   MSP430REG_NORACE(TA1CTL);
++  MSP430REG_NORACE(TA1IV);
+ #endif
+ #if defined(__MSP430_HAS_TB3__) || defined(__MSP430_HAS_TB7__)
+   MSP430REG_NORACE(TBCTL);
++  MSP430REG_NORACE(TBIV);
+ #endif
+ 
+   enum
+@@ -105,10 +108,8 @@
+     // .DCOR = 0; select internal resistor for DCO
+     BCSCTL2 = DIVS1;
+ #else /* __MSP430_HAS_BC2__ */
+-#if 0
+     P2SEL |= 0xc0;                      // P2.6=XIN, P2.7=XOUT
+     P2DIR = 0x80 | (P2DIR & ~0xc0);     // some chips need P2.7 set as output
+-#endif
+ 
+ #if defined(CALBC1_16MHZ_)
+ #if defined(__msp430_using_vlo)
+@@ -211,7 +212,7 @@
+   {
+     // TACTL.MC = 2; continuous mode
+     TACTL = MC1 | (TACTL & ~(MC1|MC0));
+-#if defined(__MSP430_HAS_T1A2__) || defined(__MSP430_HAS_T1A3__)
++#if defined(__MSP430_HAS_T1A2__)
+     // TA1CTL.MC = 2; continuous mode
+     TA1CTL = MC1 | (TA1CTL & ~(MC1|MC0));
+ #endif
+@@ -221,7 +222,7 @@
+   {
+     //TACTL.MC = 0; stop timer B
+     TACTL = TACTL & ~(MC1|MC0);
+-#if defined(__MSP430_HAS_T1A2__) || defined(__MSP430_HAS_T1A3__)
++#if defined(__MSP430_HAS_T1A2__)
+     //TA1CTL.MC = 0; stop timer A
+     TA1CTL &= ~(MC1|MC0);
+ #endif
+@@ -325,11 +326,14 @@
+   {
+     // Reset timers and clear interrupt vectors
+     TACTL = TACLR;
+-#if defined(__MSP430_HAS_T1A2__) || defined(__MSP430_HAS_T1A3__)
++    TAIV = 0;
++#if defined(__MSP430_HAS_T1A2__)
+     TA1CTL = TACLR;
++    TA1IV = 0;
+ #endif
+ #if defined(__MSP430_HAS_TB3__) || defined(__MSP430_HAS_TB7__)
+     TBCTL = TBCLR;
++    TBIV = 0;
+ #endif
+ 
+     atomic
+--- ../tos430/tos/chips/msp430-small/timer/Msp430TimerC.nc	2015-05-19 01:08:10.000000000 +0900
++++ ./tos/chips/msp430-small/timer/Msp430TimerC.nc	2015-06-03 11:54:38.000000000 +0900
+@@ -49,7 +49,7 @@
+   provides interface Msp430Capture as CaptureA2;
+ #endif
+ 
+-#if defined(__MSP430_HAS_T1A2__) || defined(__MSP430_HAS_T1A3__)
++#if defined(__MSP430_HAS_T1A2__)
+   provides interface Msp430Timer as Timer1A;
+   provides interface Msp430TimerControl as Control1A0;
+   provides interface Msp430Compare as Compare1A0;
+@@ -57,11 +57,6 @@
+   provides interface Msp430TimerControl as Control1A1;
+   provides interface Msp430Compare as Compare1A1;
+   provides interface Msp430Capture as Capture1A1;
+-#if defined(__MSP430_HAS_T1A3__)
+-  provides interface Msp430TimerControl as Control1A2;
+-  provides interface Msp430Compare as Compare1A2;
+-  provides interface Msp430Capture as Capture1A2;
+-#endif
+ #endif
+ 
+ #if defined(__MSP430_HAS_TB3__) || defined(__MSP430_HAS_TB7__)
+@@ -104,14 +99,11 @@
+ #if defined(__MSP430_HAS_TA3__)
+            , new Msp430TimerCapComP( TACCTL2_, TACCR2_ ) as Msp430TimerA2
+ #endif
+-#if defined(__MSP430_HAS_T1A2__) || defined(__MSP430_HAS_T1A3__)
++#if defined(__MSP430_HAS_T1A2__)
+            , new Msp430TimerP(TA1IV_, TA1R_, TA1CTL_, TAIFG, TACLR, TAIE,
+                TASSEL0, TASSEL1, FALSE) as Msp430Timer1A
+            , new Msp430TimerCapComP(TACCTL0_, TACCR0_) as Msp430Timer1A0
+            , new Msp430TimerCapComP(TACCTL1_, TACCR1_) as Msp430Timer1A1
+-#if defined(__MSP430_HAS_T1A3__)
+-           , new Msp430TimerCapComP(TACCTL2_, TACCR2_) as Msp430Timer1A2
+-#endif
+ #endif
+ #if defined(__MSP430_HAS_TB3__) || defined(__MSP430_HAS_TB7__)
+            , new Msp430TimerCapComP( TBCCTL0_, TBCCR0_ ) as Msp430TimerB0
+@@ -129,7 +121,7 @@
+ 
+   // Timer A
+   TimerA = Msp430TimerA.Timer;
+-  Msp430TimerA.Overflow -> Msp430TimerA.Event[10];
++  Msp430TimerA.Overflow -> Msp430TimerA.Event[5];
+   Msp430TimerA.VectorTimerX0 -> Common.VectorTimerA0;
+   Msp430TimerA.VectorTimerX1 -> Common.VectorTimerA1;
+ 
+@@ -145,7 +137,7 @@
+   CompareA1 = Msp430TimerA1.Compare;
+   CaptureA1 = Msp430TimerA1.Capture;
+   Msp430TimerA1.Timer -> Msp430TimerA.Timer;
+-  Msp430TimerA1.Event -> Msp430TimerA.Event[2];
++  Msp430TimerA1.Event -> Msp430TimerA.Event[1];
+ 
+ #if defined(__MSP430_HAS_TA3__)
+   // Timer A2
+@@ -153,13 +145,13 @@
+   CompareA2 = Msp430TimerA2.Compare;
+   CaptureA2 = Msp430TimerA2.Capture;
+   Msp430TimerA2.Timer -> Msp430TimerA.Timer;
+-  Msp430TimerA2.Event -> Msp430TimerA.Event[4];
++  Msp430TimerA2.Event -> Msp430TimerA.Event[2];
+ #endif
+ 
+-#if defined(__MSP430_HAS_T1A2__) || defined(__MSP430_HAS_T1A3__)
++#if defined(__MSP430_HAS_T1A2__)
+   // Timer1 A
+   Timer1A = Msp430Timer1A.Timer;
+-  Msp430Timer1A.Overflow -> Msp430Timer1A.Event[10];
++  Msp430Timer1A.Overflow -> Msp430Timer1A.Event[5];
+   Msp430Timer1A.VectorTimerX0 -> Common.VectorTimer1A0;
+   Msp430Timer1A.VectorTimerX1 -> Common.VectorTimer1A1;
+ 
+@@ -175,22 +167,13 @@
+   Compare1A1 = Msp430Timer1A1.Compare;
+   Capture1A1 = Msp430Timer1A1.Capture;
+   Msp430Timer1A1.Timer -> Msp430Timer1A.Timer;
+-  Msp430Timer1A1.Event -> Msp430Timer1A.Event[2];
+-
+-#if defined(__MSP430_HAS_T1A3__)
+-  // Timer1 A2
+-  Control1A2 = Msp430Timer1A2.Control;
+-  Compare1A2 = Msp430Timer1A2.Compare;
+-  Capture1A2 = Msp430Timer1A2.Capture;
+-  Msp430Timer1A2.Timer -> Msp430Timer1A.Timer;
+-  Msp430Timer1A2.Event -> Msp430Timer1A.Event[4];
+-#endif
++  Msp430Timer1A1.Event -> Msp430Timer1A.Event[1];
+ #endif
+ 
+ #if defined(__MSP430_HAS_TB3__) || defined(__MSP430_HAS_TB7__)
+   // Timer B
+   TimerB = Msp430TimerB.Timer;
+-  Msp430TimerB.Overflow -> Msp430TimerB.Event[14];
++  Msp430TimerB.Overflow -> Msp430TimerB.Event[7];
+   Msp430TimerB.VectorTimerX0 -> Common.VectorTimerB0;
+   Msp430TimerB.VectorTimerX1 -> Common.VectorTimerB1;
+ 
+@@ -206,14 +189,14 @@
+   CompareB1 = Msp430TimerB1.Compare;
+   CaptureB1 = Msp430TimerB1.Capture;
+   Msp430TimerB1.Timer -> Msp430TimerB.Timer;
+-  Msp430TimerB1.Event -> Msp430TimerB.Event[2];
++  Msp430TimerB1.Event -> Msp430TimerB.Event[1];
+ 
+   // Timer B2
+   ControlB2 = Msp430TimerB2.Control;
+   CompareB2 = Msp430TimerB2.Compare;
+   CaptureB2 = Msp430TimerB2.Capture;
+   Msp430TimerB2.Timer -> Msp430TimerB.Timer;
+-  Msp430TimerB2.Event -> Msp430TimerB.Event[4];
++  Msp430TimerB2.Event -> Msp430TimerB.Event[2];
+ #endif
+ 
+ #if defined(__MSP430_HAS_TB7__)
+@@ -222,28 +205,28 @@
+   CompareB3 = Msp430TimerB3.Compare;
+   CaptureB3 = Msp430TimerB3.Capture;
+   Msp430TimerB3.Timer -> Msp430TimerB.Timer;
+-  Msp430TimerB3.Event -> Msp430TimerB.Event[6];
++  Msp430TimerB3.Event -> Msp430TimerB.Event[3];
+ 
+   // Timer B4
+   ControlB4 = Msp430TimerB4.Control;
+   CompareB4 = Msp430TimerB4.Compare;
+   CaptureB4 = Msp430TimerB4.Capture;
+   Msp430TimerB4.Timer -> Msp430TimerB.Timer;
+-  Msp430TimerB4.Event -> Msp430TimerB.Event[8];
++  Msp430TimerB4.Event -> Msp430TimerB.Event[4];
+ 
+   // Timer B5
+   ControlB5 = Msp430TimerB5.Control;
+   CompareB5 = Msp430TimerB5.Compare;
+   CaptureB5 = Msp430TimerB5.Capture;
+   Msp430TimerB5.Timer -> Msp430TimerB.Timer;
+-  Msp430TimerB5.Event -> Msp430TimerB.Event[10];
++  Msp430TimerB5.Event -> Msp430TimerB.Event[5];
+ 
+   // Timer B6
+   ControlB6 = Msp430TimerB6.Control;
+   CompareB6 = Msp430TimerB6.Compare;
+   CaptureB6 = Msp430TimerB6.Capture;
+   Msp430TimerB6.Timer -> Msp430TimerB.Timer;
+-  Msp430TimerB6.Event -> Msp430TimerB.Event[12];
++  Msp430TimerB6.Event -> Msp430TimerB.Event[6];
+ #endif
+ }
+ 
+--- ../tos430/tos/chips/msp430-small/timer/Msp430TimerCommonP.nc	2015-05-19 01:08:10.000000000 +0900
++++ ./tos/chips/msp430-small/timer/Msp430TimerCommonP.nc	2015-06-03 11:54:38.000000000 +0900
+@@ -3,7 +3,7 @@
+ {
+   provides interface Msp430TimerEvent as VectorTimerA0;
+   provides interface Msp430TimerEvent as VectorTimerA1;
+-#if defined(__MSP430_HAS_T1A2__) || defined(__MSP430_HAS_T1A3__)
++#if defined(__MSP430_HAS_T1A2__)
+   provides interface Msp430TimerEvent as VectorTimer1A0;
+   provides interface Msp430TimerEvent as VectorTimer1A1;
+ #endif
+@@ -21,7 +21,7 @@
+   TOSH_SIGNAL(TIMERA0_VECTOR) { signal VectorTimerA0.fired(); }
+   TOSH_SIGNAL(TIMERA1_VECTOR) { signal VectorTimerA1.fired(); }
+ #endif
+-#if defined(__MSP430_HAS_T1A2__) || defined(__MSP430_HAS_T1A3__)
++#if defined(__MSP430_HAS_T1A2__)
+   TOSH_SIGNAL(TIMER1_A0_VECTOR) { signal VectorTimer1A0.fired(); }
+   TOSH_SIGNAL(TIMER1_A1_VECTOR) { signal VectorTimer1A1.fired(); }
+ #endif
+--- ../tos430/tos/chips/msp430-small/usart/HplMsp430Usart0P.nc	2015-05-19 01:08:10.000000000 +0900
++++ ./tos/chips/msp430-small/usart/HplMsp430Usart0P.nc	2015-06-03 11:54:38.000000000 +0900
+@@ -158,14 +158,12 @@
+   }
+ 
+   async command void Usart.resetUsart(bool reset) {
+-    atomic {
+     if (reset) {
+       U0CTL = SWRST;
+     }
+     else {
+       CLR_FLAG(U0CTL, SWRST);
+     }
+-    }
+   }
+ 
+   async command bool Usart.isSpi() {
+--- ../tos430/tos/chips/msp430-small/usi/HplMsp430UsiInterrupts.nc	2015-05-19 01:08:10.000000000 +0900
++++ ./tos/chips/msp430-small/usi/HplMsp430UsiInterrupts.nc	2015-06-03 11:54:38.000000000 +0900
+@@ -33,7 +33,7 @@
+ #include "msp430usi.h"
+ 
+ interface HplMsp430UsiInterrupts {
+-    async event void transmitDone();
++    async event void transmitDone(uint8_t data);
+     async event void startDetected();
+ }
+ 
+--- ../tos430/tos/chips/msp430-small/usi/HplMsp430UsiP.nc	2015-05-19 01:08:10.000000000 +0900
++++ ./tos/chips/msp430-small/usi/HplMsp430UsiP.nc	2015-06-03 11:54:38.000000000 +0900
+@@ -55,8 +55,8 @@
+     MSP430REG_NORACE(USICNT);
+     MSP430REG_NORACE(USISRL);
+ 
+-    async event void UsiInterrupts.transmitDone() {
+-        signal Interrupts.transmitDone();
++    async event void UsiInterrupts.transmitDone(uint8_t temp) {
++        signal Interrupts.transmitDone(temp);
+     }
+ 
+     async event void UsiInterrupts.startDetected() {
+@@ -194,16 +194,6 @@
+     async command uint8_t Usi.rx() {
+         return USISRL;
+     }
+-
+-    TOSH_SIGNAL(USI_VECTOR) {
+-        uint8_t usictl1 = USICTL1;
+-        if (usictl1 & USIIFG) {
+-            signal Interrupts.transmitDone();
+-        }
+-        if (usictl1 & USISTTIFG) {
+-            signal Interrupts.startDetected();
+-        }
+-    }
+ }
+ 
+ /*
+--- ../tos430/tos/chips/msp430-small/usi/Msp430SpiP.nc	2015-05-19 01:08:10.000000000 +0900
++++ ./tos/chips/msp430-small/usi/Msp430SpiP.nc	2015-06-03 11:54:38.000000000 +0900
+@@ -160,9 +160,9 @@
+         atomic signalDone();
+     }
+ 
+-    async event void UsiInterrupts.transmitDone() {
++    async event void UsiInterrupts.transmitDone(uint8_t data) {
+         if (m_rxBuf)
+-            m_rxBuf[m_pos - 1] = USISRL;
++            m_rxBuf[m_pos - 1] = data;
+ 
+         if (m_pos < m_len) {
+             continueOp();
+--- ../tos430/tos/interfaces/Leds.nc	2015-05-19 01:08:10.000000000 +0900
++++ ./tos/interfaces/Leds.nc	2012-08-21 03:28:42.000000000 +0900
+@@ -50,7 +50,6 @@
+ 
+ interface Leds {
+ 
+-#if 0 < PLATFORM_LED_COUNT
+   /**
+    * Turn on LED 0. The color of this LED depends on the platform.
+    */
+@@ -67,7 +66,6 @@
+    */
+   async command void led0Toggle();
+ 
+-#if 1 < PLATFORM_LED_COUNT
+   /**
+    * Turn on LED 1. The color of this LED depends on the platform.
+    */
+@@ -84,7 +82,7 @@
+    */
+   async command void led1Toggle();
+ 
+-#if 2 < PLATFORM_LED_COUNT
++ 
+   /**
+    * Turn on LED 2. The color of this LED depends on the platform.
+    */
+@@ -100,9 +98,7 @@
+    * The color of this LED depends on the platform.
+    */
+   async command void led2Toggle();
+-#endif
+-#endif
+-#endif
++
+ 
+   /**
+    * Get the current LED settings as a bitmask. Each bit corresponds to
+--- ../tos430/tos/platforms/exp430g2211/.platform	2015-05-19 01:08:10.000000000 +0900
++++ ./tos/platforms/exp430g2211/.platform	2015-06-03 11:54:38.000000000 +0900
+@@ -3,10 +3,10 @@
+ push( @includes, qw(
+ 
+       %T/platforms/exp430g2211
+-      %T/platforms/exp430g2-common
++      %T/platforms/exp430g-common
+       %T/platforms/msp430-common
+ 
+-      %T/chips/msp430-small/msp430g2x11
++      %T/chips/msp430-small/msp430g2xx1
+ 
+       %T/chips/msp430-small
+       %T/chips/msp430-small/pins
+--- ../tos430/tos/platforms/exp430g2211/hardware.h	2015-05-19 01:08:10.000000000 +0900
++++ ./tos/platforms/exp430g2211/hardware.h	2015-06-03 11:54:38.000000000 +0900
+@@ -42,9 +42,6 @@
+ // SW
+ #define PORT_PUSH_SW   Port13
+ 
+-#define USE_BIT_BANG_SPI_MASTER
+-#define USE_BIT_BANG_I2C_MASTER
+-
+ #endif // _H_hardware_h
+ 
+ /*
+--- ../tos430/tos/platforms/exp430g2231/.platform	2015-05-19 01:08:10.000000000 +0900
++++ ./tos/platforms/exp430g2231/.platform	2015-06-03 11:54:38.000000000 +0900
+@@ -3,10 +3,10 @@
+ push( @includes, qw(
+ 
+       %T/platforms/exp430g2231
+-      %T/platforms/exp430g2-common
++      %T/platforms/exp430g-common
+       %T/platforms/msp430-common
+ 
+-      %T/chips/msp430-small/msp430g2x31
++      %T/chips/msp430-small/msp430g2xx1
+ 
+       %T/chips/msp430-small
+       %T/chips/msp430-small/pins
+--- ../tos430/tos/platforms/exp430g2231/hardware.h	2015-05-19 01:08:10.000000000 +0900
++++ ./tos/platforms/exp430g2231/hardware.h	2015-06-03 11:54:38.000000000 +0900
+@@ -42,9 +42,6 @@
+ // SW
+ #define PORT_PUSH_SW   Port13
+ 
+-#define USE_BIT_BANG_SPI_MASTER
+-#define USE_BIT_BANG_I2C_MASTER
+-
+ #endif // _H_hardware_h
+ 
+ /*
+--- ../tos430/tos/platforms/exp430g2231/PlatformSpiC.nc	2015-05-19 01:08:10.000000000 +0900
++++ ./tos/platforms/exp430g2231/PlatformSpiC.nc	2015-06-03 11:54:38.000000000 +0900
+@@ -1,22 +1,14 @@
+ /* -*- mode: nesc; mode: flyspell-prog; -*- */
+ 
+-#include "hardware.h"
+-
+-#ifdef USE_BIT_BANG_SPI_MASTER
+-#include_next "PlatformSpiC.nc"
+-#else
+-
+ #include "msp430usi.h"
+ 
+ configuration PlatformSpiC {
+-    provides {
+-        interface StdControl as SpiControl;
+-        interface SpiByte;
+-        interface SpiPacket;
+-    }
++    provides interface StdControl as SpiControl;
++    provides interface SpiByte;
++    provides interface SpiPacket;
+ }
+ implementation {
+-    components new Msp430Spi0C() as SpiC;
++    components new Msp430SpiC() as SpiC;
+     SpiByte = SpiC;
+     SpiPacket = SpiC;
+ 
+@@ -25,7 +17,6 @@
+     UsiConf.Msp430SpiConfigure <- SpiC;
+     UsiConf.SpiResource -> SpiC;
+ }
+-#endif
+ 
+ /*
+  * Local Variables:
+--- ../tos430/tos/platforms/exp430g2452/.platform	2015-05-19 01:08:10.000000000 +0900
++++ ./tos/platforms/exp430g2452/.platform	2015-06-03 11:54:38.000000000 +0900
+@@ -3,10 +3,10 @@
+ push( @includes, qw(
+ 
+       %T/platforms/exp430g2452
+-      %T/platforms/exp430g2-common
++      %T/platforms/exp430g-common
+       %T/platforms/msp430-common
+ 
+-      %T/chips/msp430-small/msp430g2x52
++      %T/chips/msp430-small/msp430g2xx2
+ 
+       %T/chips/msp430-small
+       %T/chips/msp430-small/pins
+--- ../tos430/tos/platforms/exp430g2452/PlatformSpiC.nc	2015-05-19 01:08:10.000000000 +0900
++++ ./tos/platforms/exp430g2452/PlatformSpiC.nc	2015-06-03 11:54:38.000000000 +0900
+@@ -1,22 +1,14 @@
+ /* -*- mode: nesc; mode: flyspell-prog; -*- */
+ 
+-#include "hardware.h"
+-
+-#ifdef USE_BIT_BANG_SPI_MASTER
+-#include_next "PlatformSpiC.nc"
+-#else
+-
+ #include "msp430usi.h"
+ 
+ configuration PlatformSpiC {
+-    provides {
+-        interface StdControl as SpiControl;
+-        interface SpiByte;
+-        interface SpiPacket;
+-    }
++    provides interface StdControl as SpiControl;
++    provides interface SpiByte;
++    provides interface SpiPacket;
+ }
+ implementation {
+-    components new Msp430Spi0C() as SpiC;
++    components new Msp430SpiC() as SpiC;
+     SpiByte = SpiC;
+     SpiPacket = SpiC;
+ 
+@@ -25,7 +17,6 @@
+     UsiConf.Msp430SpiConfigure <- SpiC;
+     UsiConf.SpiResource -> SpiC;
+ }
+-#endif
+ 
+ /*
+  * Local Variables:
+--- ../tos430/tos/platforms/ez430f2012/.platform	2015-05-19 01:08:10.000000000 +0900
++++ ./tos/platforms/ez430f2012/.platform	2015-06-03 11:54:38.000000000 +0900
+@@ -6,13 +6,12 @@
+       %T/platforms/ez430f-common
+       %T/platforms/msp430-common
+ 
+-      %T/chips/msp430-small/msp430f20x2
++      %T/chips/msp430-small/msp430x20x2
+ 
+       %T/chips/msp430-small
+       %T/chips/msp430-small/pins
+       %T/chips/msp430-small/timer-vlo
+       %T/chips/msp430-small/timer
+-      %T/chips/msp430-small/usi
+ 
+       %T/chips/msp430
+       %T/chips/msp430/pins
+--- ../tos430/tos/platforms/ez430f2012/hardware.h	2015-05-19 01:08:10.000000000 +0900
++++ ./tos/platforms/ez430f2012/hardware.h	2015-06-03 11:54:38.000000000 +0900
+@@ -39,9 +39,6 @@
+ 
+ #include "msp430hardware.h"
+ 
+-#define USE_BIT_BANG_SPI_MASTER
+-#undef USE_BIT_BANG_I2C_MASTER
+-
+ #endif // _H_hardware_h
+ 
+ /*
+--- ../tos430/tos/platforms/ez430f2013/.platform	2015-05-19 01:08:10.000000000 +0900
++++ ./tos/platforms/ez430f2013/.platform	2015-06-03 11:54:38.000000000 +0900
+@@ -6,13 +6,12 @@
+       %T/platforms/ez430f-common
+       %T/platforms/msp430-common
+ 
+-      %T/chips/msp430-small/msp430f20x3
++      %T/chips/msp430-small/msp430x20x3
+ 
+       %T/chips/msp430-small
+       %T/chips/msp430-small/pins
+       %T/chips/msp430-small/timer-vlo
+       %T/chips/msp430-small/timer
+-      %T/chips/msp430-small/usi
+ 
+       %T/chips/msp430
+       %T/chips/msp430/pins
+--- ../tos430/tos/platforms/ez430f2013/hardware.h	2015-05-19 01:08:10.000000000 +0900
++++ ./tos/platforms/ez430f2013/hardware.h	2015-06-03 11:54:38.000000000 +0900
+@@ -39,9 +39,6 @@
+ 
+ #include "msp430hardware.h"
+ 
+-#undef USE_BIT_BANG_SPI_MASTER
+-#define USE_BIT_BANG_I2C_MASTER
+-
+ #endif // _H_hardware_h
+ 
+ /*
+--- ../tos430/tos/platforms/ez430rf2500/.platform	2015-05-19 01:08:10.000000000 +0900
++++ ./tos/platforms/ez430rf2500/.platform	2015-06-03 11:54:38.000000000 +0900
+@@ -5,7 +5,7 @@
+       %T/platforms/ez430rf2500
+       %T/platforms/msp430-common
+ 
+-      %T/chips/msp430-small/msp430f22x4
++      %T/chips/msp430-small/msp430x22x4
+ 
+       %T/chips/msp430-small
+       %T/chips/msp430-small/pins
+@@ -16,7 +16,7 @@
+       %T/chips/msp430
+       %T/chips/msp430/pins
+       %T/chips/msp430/timer
+-      %T/chips/msp430/x2xxx/usci
++      %T/chips/msp430X/usci
+ 
+       %T/lib/gpio
+       %T/lib/timer
+--- ../tos430/tos/platforms/ez430rf2500/hardware.h	2015-05-19 01:08:10.000000000 +0900
++++ ./tos/platforms/ez430rf2500/hardware.h	2015-06-03 11:54:38.000000000 +0900
+@@ -42,9 +42,6 @@
+ // SW
+ #define PORT_PUSH_SW   Port12
+ 
+-#undef USE_BIT_BANG_SPI_MASTER
+-#undef USE_BIT_BANG_I2C_MASTER
+-
+ #endif // _H_hardware_h
+ 
+ /*
+--- ../tos430/tos/platforms/ez430rf2500/PlatformSpiC.nc	2015-05-19 01:08:10.000000000 +0900
++++ ./tos/platforms/ez430rf2500/PlatformSpiC.nc	2015-06-03 11:54:38.000000000 +0900
+@@ -1,11 +1,5 @@
+ /* -*- mode: nesc; mode: flyspell-prog; -*- */
+ 
+-#include "hardware.h"
+-
+-#ifdef USE_BIT_BANG_SPI_MASTER
+-#include_next "PlatformSpiC.nc"
+-#else
+-
+ #include "msp430usci.h"
+ 
+ configuration PlatformSpiC {
+@@ -14,7 +8,7 @@
+     provides interface SpiPacket;
+ }
+ implementation {
+-    components new Msp430SpiA0C() as SpiC;
++    components new Msp430SpiB0C() as SpiC;
+     SpiByte = SpiC;
+     SpiPacket = SpiC;
+ 
+@@ -23,7 +17,6 @@
+     UsciConf.Msp430SpiConfigure <- SpiC;
+     UsciConf.SpiResource -> SpiC;
+ }
+-#endif
+ 
+ /*
+  * Local Variables:
+--- ../tos430/tos/platforms/msp430-common/PlatformLed.h	2015-05-19 01:08:10.000000000 +0900
++++ ./tos/platforms/msp430-common/PlatformLed.h	2015-06-08 10:31:55.000000000 +0900
+@@ -1,50 +1,15 @@
+-/* -*- mode: c; mode: flyspell-prog; -*- */
+-/* Copyright (c) 2011, Tadashi G. Takaoka
+- * All rights reserved.
+- *
+- * Redistribution and use in source and binary forms, with or without
+- * modification, are permitted provided that the following conditions
+- * are met:
+- *
+- * - Redistributions of source code must retain the above copyright
+- *   notice, this list of conditions and the following disclaimer.
+- * - Redistributions in binary form must reproduce the above copyright
+- *   notice, this list of conditions and the following disclaimer in
+- *   the documentation and/or other materials provided with the
+- *   distribution.
+- * - Neither the name of Tadashi G. Takaoka nor the names of its
+- *   contributors may be used to endorse or promote products derived
+- *   from this software without specific prior written permission.
+- *
+- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+- * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+- * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+- * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+- * COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
+- * INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+- * (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+- * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+- * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
+- * STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+- * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
+- * OF THE POSSIBILITY OF SUCH DAMAGE.
+- */
+-
+-//#ifndef _PLATFORM_LED_H_
+-#define _PLATFORM_LED_H_
+-
+-// LED
++#ifdef __LAUNCHPAD__
++ 
++#ifdef __MSP430G2452
+ #define PORT_LED0           Port10  // RED
++#define PORT_LED1           Port16  // GREEN
++#define PLATFORM_LED_COUNT  2
++#endif
++ 
++#else 
++#define PORT_LED0           Port10  //RED
+ #define PLATFORM_LED_COUNT  1
++#endif
++ 
+ #define PLATFORM_LED_RED    0       // LED1
+-
+-//#endif // _PLATFORM_LED_H_
+-
+-/*
+- * Local Variables:
+- * c-file-style: "bsd"
+- * c-basic-offset: 4
+- * indent-tabs-mode: nil
+- * End:
+- * vim: set et ts=4 sw=4:
+- */
++#define PLATFORM_LED_GREEN  0       // LED2
+--- ../tos430/tos/platforms/msp430-common/PlatformLedP.nc	2015-05-19 01:08:10.000000000 +0900
++++ ./tos/platforms/msp430-common/PlatformLedP.nc	2015-06-03 11:54:38.000000000 +0900
+@@ -40,29 +40,17 @@
+ implementation {
+     async command void Led.on[uint8_t led_id]() {
+         switch (led_id) {
+-#if 0 < PLATFORM_LED_COUNT
+         case 0: call Leds.led0On(); break;
+-#if 1 < PLATFORM_LED_COUNT
+         case 1: call Leds.led1On(); break;
+-#if 2 < PLATFORM_LED_COUNT
+         case 2: call Leds.led2On(); break;
+-#endif
+-#endif
+-#endif
+         }
+     }
+ 
+     async command void Led.off[uint8_t led_id]() {
+         switch (led_id) {
+-#if 0 < PLATFORM_LED_COUNT
+         case 0: call Leds.led0Off(); break;
+-#if 1 < PLATFORM_LED_COUNT
+         case 1: call Leds.led1Off(); break;
+-#if 2 < PLATFORM_LED_COUNT
+         case 2: call Leds.led2Off(); break;
+-#endif
+-#endif
+-#endif
+         }
+     }
+ 
+@@ -76,15 +64,9 @@
+ 
+     async command void Led.toggle[uint8_t led_id]() {
+         switch (led_id) {
+-#if 0 < PLATFORM_LED_COUNT
+         case 0: call Leds.led0Toggle(); break;
+-#if 1 < PLATFORM_LED_COUNT
+         case 1: call Leds.led1Toggle(); break;
+-#if 2 < PLTFORM_LED_COUNT
+         case 2: call Leds.led2Toggle(); break;
+-#endif
+-#endif
+-#endif
+         }
+     }
+ 
+--- ../tos430/tos/platforms/msp430-common/PlatformLedsC.nc	2015-05-19 01:08:10.000000000 +0900
++++ ./tos/platforms/msp430-common/PlatformLedsC.nc	2015-06-08 10:25:28.000000000 +0900
+@@ -35,41 +35,43 @@
+ 
+ configuration PlatformLedsC {
+     provides {
+-#if 0 < PLATFORM_LED_COUNT
++//#if 0 < PLATFORM_LED_COUNT
+         interface GeneralIO as Led0;
+-#if 1 < PLATFORM_LED_COUNT
++//#endif
++//#if 1 < PLATFORM_LED_COUNT
+         interface GeneralIO as Led1;
+-#if 2 < PLATFORM_LED_COUNT
++//#endif
++//#if 2 < PLATFORM_LED_COUNT
++#if 0
+         interface GeneralIO as Led2;
+ #endif
+-#endif
+-#endif
+     }
+     uses interface Init;
+ }
+ implementation {
+     components HplMsp430GeneralIOC as GpioC;
+-#if 0 < PLATFORM_LED_COUNT
++//#if 0 < PLATFORM_LED_COUNT
+     components new Msp430GpioC() as Led0Port;
+     components new InvertGeneralIOC() as Led0Inv;
+     Led0 = Led0Inv;
+     Led0Inv.Inverted -> Led0Port;
+     Led0Port -> GpioC.PORT_LED0;
+-#if 1 < PLATFORM_LED_COUNT
++//#endif
++//#if 1 < PLATFORM_LED_COUNT
+     components new Msp430GpioC() as Led1Port;
+     components new InvertGeneralIOC() as Led1Inv;
+     Led1 = Led1Inv;
+     Led1Inv.Inverted -> Led1Port;
+     Led1Port -> GpioC.PORT_LED1;
+-#if 2 < PLATFORM_LED_COUNT
++//#endif
++//#if 2 < PLATFORM_LED_COUNT
++#if 0
+     components new Msp430GpioC() as Led2Port;
+     components new InvertGeneralIOC() as Led2Inv;
+     Led2 = Led2Inv;
+     Led2Inv.Inverted -> Led2Port;
+     Led2Port -> GpioC.PORT_LED2;
+ #endif
+-#endif
+-#endif
+     components PlatformP;
+ 
+     Init = PlatformP.LedsInit;
+--- ../tos430/tos/platforms/msp430-common/PlatformSpiC.nc	2015-05-19 01:08:10.000000000 +0900
++++ ./tos/platforms/msp430-common/PlatformSpiC.nc	2015-06-03 11:54:38.000000000 +0900
+@@ -1,9 +1,6 @@
+ /* -*- mode: nesc; mode: flyspell-prog; -*- */
+ 
+-#include "hardware.h"
+-
+-#ifdef USE_BIT_BANG_SPI_MASTER
+-#include "BitBangSpiMaster.h"
++#include "SpiMaster.h"
+ 
+ configuration PlatformSpiC {
+     provides {
+@@ -13,16 +10,15 @@
+ }
+ implementation {
+     components GpioConf as GpioC;
+-    components new BitBangSpiMasterC(SPI_MASTER_MODE0, SPI_MASTER_MSB);
++    components new SpiMasterC(SPI_MASTER_MODE0, SPI_MASTER_MSB);
+ 
+-    SpiByte = BitBangSpiMasterC;
+-    SpiControl = BitBangSpiMasterC;
++    SpiByte = SpiMasterC;
++    SpiControl = SpiMasterC;
+ 
+-    BitBangSpiMasterC.SIMO -> GpioC.SIMO;
+-    BitBangSpiMasterC.SOMI -> GpioC.SOMI;
+-    BitBangSpiMasterC.CLK -> GpioC.CLK;
++    SpiMasterC.SIMO -> GpioC.SIMO;
++    SpiMasterC.SOMI -> GpioC.SOMI;
++    SpiMasterC.CLK -> GpioC.CLK;
+ }
+-#endif
+ 
+ /*
+  * Local Variables:
+--- ../tos430/tos/platforms/msp430f1121/.platform	2015-05-19 01:08:10.000000000 +0900
++++ ./tos/platforms/msp430f1121/.platform	2015-06-03 11:54:38.000000000 +0900
+@@ -5,7 +5,7 @@
+       %T/platforms/msp430f1121
+       %T/platforms/msp430-common
+ 
+-      %T/chips/msp430-small/msp430f11x1
++      %T/chips/msp430-small/msp430x11x1
+ 
+       %T/chips/msp430-small
+       %T/chips/msp430-small/pins
+--- ../tos430/tos/platforms/msp430f1121/hardware.h	2015-05-19 01:08:10.000000000 +0900
++++ ./tos/platforms/msp430f1121/hardware.h	2015-06-03 11:54:38.000000000 +0900
+@@ -39,9 +39,6 @@
+ 
+ #include "msp430hardware.h"
+ 
+-#define USE_BIT_BANG_SPI_MASTER
+-#define USE_BIT_BANG_I2C_MASTER
+-
+ #endif // _H_hardware_h
+ 
+ /*
+--- ../tos430/tos/platforms/msp430f1132/.platform	2015-05-19 01:08:10.000000000 +0900
++++ ./tos/platforms/msp430f1132/.platform	2015-06-03 11:54:38.000000000 +0900
+@@ -5,7 +5,7 @@
+       %T/platforms/msp430f1132
+       %T/platforms/msp430-common
+ 
+-      %T/chips/msp430-small/msp430f11x2
++      %T/chips/msp430-small/msp430x11x2
+ 
+       %T/chips/msp430-small
+       %T/chips/msp430-small/pins
+--- ../tos430/tos/platforms/msp430f1132/hardware.h	2015-05-19 01:08:10.000000000 +0900
++++ ./tos/platforms/msp430f1132/hardware.h	2015-06-03 11:54:38.000000000 +0900
+@@ -39,9 +39,6 @@
+ 
+ #include "msp430hardware.h"
+ 
+-#define USE_BIT_BANG_SPI_MASTER
+-#define USE_BIT_BANG_I2C_MASTER
+-
+ #endif // _H_hardware_h
+ 
+ /*
+--- ../tos430/tos/platforms/msp430f1232/.platform	2015-05-19 01:08:10.000000000 +0900
++++ ./tos/platforms/msp430f1232/.platform	2015-06-03 11:54:38.000000000 +0900
+@@ -5,7 +5,7 @@
+       %T/platforms/msp430f1232
+       %T/platforms/msp430-common
+ 
+-      %T/chips/msp430-small/msp430f12x2
++      %T/chips/msp430-small/msp430x12x2
+ 
+       %T/chips/msp430-small
+       %T/chips/msp430-small/pins
+--- ../tos430/tos/platforms/msp430f1232/hardware.h	2015-05-19 01:08:10.000000000 +0900
++++ ./tos/platforms/msp430f1232/hardware.h	2015-06-03 11:54:38.000000000 +0900
+@@ -39,9 +39,6 @@
+ 
+ #include "msp430hardware.h"
+ 
+-#undef USE_BIT_BANG_SPI_MASTER
+-#define USE_BIT_BANG_I2C_MASTER
+-
+ #endif // _H_hardware_h
+ 
+ /*
+--- ../tos430/tos/platforms/msp430f1232/PlatformSpiC.nc	2015-05-19 01:08:10.000000000 +0900
++++ ./tos/platforms/msp430f1232/PlatformSpiC.nc	2015-06-03 11:54:38.000000000 +0900
+@@ -1,11 +1,5 @@
+ /* -*- mode: nesc; mode: flyspell-prog; -*- */
+ 
+-#include "hardware.h"
+-
+-#ifdef USE_BIT_BANG_SPI_MASTER
+-#include_next "PlatformSpiC.nc"
+-#else
+-
+ #include "msp430usart.h"
+ 
+ configuration PlatformSpiC {
+@@ -23,7 +17,6 @@
+     UsartConf.Msp430SpiConfigure <- SpiC;
+     UsartConf.SpiResource -> SpiC;
+ }
+-#endif
+ 
+ /*
+  * Local Variables:
+--- ../tos430/tos/platforms/msp430f1611/.platform	2015-05-19 01:08:10.000000000 +0900
++++ ./tos/platforms/msp430f1611/.platform	2015-06-03 11:54:38.000000000 +0900
+@@ -5,7 +5,7 @@
+       %T/platforms/msp430f1611
+       %T/platforms/msp430-common
+ 
+-      %T/chips/msp430-small/msp430f161x
++      %T/chips/msp430-small/msp430x161x
+ 
+       %T/chips/msp430-small
+       %T/chips/msp430-small/pins
+--- ../tos430/tos/platforms/msp430f1611/hardware.h	2015-05-19 01:08:10.000000000 +0900
++++ ./tos/platforms/msp430f1611/hardware.h	2015-06-03 11:54:38.000000000 +0900
+@@ -39,9 +39,6 @@
+ 
+ #include "msp430hardware.h"
+ 
+-#undef USE_BIT_BANG_SPI_MASTER
+-#undef USE_BIT_BANG_I2C_MASTER
+-
+ #endif // _H_hardware_h
+ 
+ /*
+--- ../tos430/tos/platforms/msp430f1611/PlatformSpiC.nc	2015-05-19 01:08:10.000000000 +0900
++++ ./tos/platforms/msp430f1611/PlatformSpiC.nc	2015-06-03 11:54:38.000000000 +0900
+@@ -1,9 +1,5 @@
+ /* -*- mode: nesc; mode: flyspell-prog; -*- */
+ 
+-#ifdef USE_BIT_BANG_SPI_MASTER
+-#include_next "PlatformSpiC.nc"
+-#else
+-
+ #include "msp430usart.h"
+ 
+ configuration PlatformSpiC {
+@@ -21,7 +17,6 @@
+     UsartConf.Msp430SpiConfigure <- SpiC;
+     UsartConf.SpiResource -> SpiC;
+ }
+-#endif
+ 
+ /*
+  * Local Variables:
+--- ../tos430/tos/platforms/msp430f1611/PlatformUartC.nc	2015-05-19 01:08:10.000000000 +0900
++++ ./tos/platforms/msp430f1611/PlatformUartC.nc	2015-06-03 11:54:38.000000000 +0900
+@@ -8,9 +8,10 @@
+     provides interface UartByte;
+ }
+ implementation {
+-#if 1
++#if 0
+     components new Msp430Uart0C() as UartC;
+ #else
++    // USART1/UART Receiver will not work [Issue 3]
+     components new Msp430Uart1C() as UartC;
+ #endif
+     UartStream = UartC;
+--- ../tos430/tos/platforms/msp430f1611/UsartConf.nc	2015-05-19 01:08:10.000000000 +0900
++++ ./tos/platforms/msp430f1611/UsartConf.nc	2015-06-03 11:54:38.000000000 +0900
+@@ -8,10 +8,6 @@
+     provides interface StdControl as SpiControl;
+     provides interface Msp430SpiConfigure;
+     uses interface Resource as SpiResource;
+-
+-    provides interface StdControl as I2CControl;
+-    provides interface Msp430I2CConfigure;
+-    uses interface Resource as I2CResource;
+ }
+ implementation {
+     const msp430_uart_union_config_t uart_config = {
+@@ -75,39 +71,6 @@
+     async command const msp430_spi_union_config_t* Msp430SpiConfigure.getConfig() {
+         return &spi_config;
+     }
+-
+-    const msp430_i2c_union_config_t i2c_config = { 
+-        {
+-        rxdmaen : 0, 
+-        txdmaen : 0, 
+-        xa : 0, 
+-        listen : 0, 
+-        mst : 1,
+-        i2cword : 0, 
+-        i2crm : 1, 
+-        i2cssel : 0x2, 
+-        i2cpsc : 0, 
+-        i2csclh : 0x3, 
+-        i2cscll : 0x3,
+-        i2coa : 0,
+-        } 
+-    };
+-
+-    command error_t I2CControl.start() {
+-        return call I2CResource.immediateRequest();
+-    }
+-
+-    command error_t I2CControl.stop() {
+-        call I2CResource.release();
+-        return SUCCESS;
+-    }
+-
+-    event void I2CResource.granted() {}
+-
+-    async command const msp430_i2c_union_config_t* Msp430I2CConfigure.getConfig() {
+-        return &i2c_config;
+-    }
+-
+ }
+ 
+ /*
+--- ../tos430/tos/platforms/msp430f2012/.platform	2015-05-19 01:08:10.000000000 +0900
++++ ./tos/platforms/msp430f2012/.platform	2015-06-03 11:54:38.000000000 +0900
+@@ -5,7 +5,7 @@
+       %T/platforms/msp430f2012
+       %T/platforms/msp430-common
+ 
+-      %T/chips/msp430-small/msp430f20x2
++      %T/chips/msp430-small/msp430x20x2
+ 
+       %T/chips/msp430-small
+       %T/chips/msp430-small/pins
+--- ../tos430/tos/platforms/msp430f2012/hardware.h	2015-05-19 01:08:10.000000000 +0900
++++ ./tos/platforms/msp430f2012/hardware.h	2015-06-03 11:54:38.000000000 +0900
+@@ -39,9 +39,6 @@
+ 
+ #include "msp430hardware.h"
+ 
+-#define USE_BIT_BANG_SPI_MASTER
+-#undef USE_BIT_BANG_I2C_MASTER
+-
+ #endif // _H_hardware_h
+ 
+ /*
+--- ../tos430/tos/platforms/msp430f2012/PlatformSpiC.nc	2015-05-19 01:08:10.000000000 +0900
++++ ./tos/platforms/msp430f2012/PlatformSpiC.nc	2015-06-03 11:54:38.000000000 +0900
+@@ -1,22 +1,14 @@
+ /* -*- mode: nesc; mode: flyspell-prog; -*- */
+ 
+-#include "hardware.h"
+-
+-#ifdef USE_BIT_BANG_SPI_MASTER
+-#include_next "PlatformSpiC.nc"
+-#else
+-
+ #include "msp430usi.h"
+ 
+ configuration PlatformSpiC {
+-    provides {
+-        interface StdControl as SpiControl;
+-        interface SpiByte;
+-        interface SpiPacket;
+-    }
++    provides interface StdControl as SpiControl;
++    provides interface SpiByte;
++    provides interface SpiPacket;
+ }
+ implementation {
+-    components new Msp430Spi0C() as SpiC;
++    components new Msp430SpiC() as SpiC;
+     SpiByte = SpiC;
+     SpiPacket = SpiC;
+ 
+@@ -25,7 +17,6 @@
+     UsiConf.Msp430SpiConfigure <- SpiC;
+     UsiConf.SpiResource -> SpiC;
+ }
+-#endif
+ 
+ /*
+  * Local Variables:
+--- ../tos430/tos/platforms/msp430f2013/.platform	2015-05-19 01:08:10.000000000 +0900
++++ ./tos/platforms/msp430f2013/.platform	2015-06-03 11:54:38.000000000 +0900
+@@ -5,7 +5,7 @@
+       %T/platforms/msp430f2013
+       %T/platforms/msp430-common
+ 
+-      %T/chips/msp430-small/msp430f20x3
++      %T/chips/msp430-small/msp430x20x3
+ 
+       %T/chips/msp430-small
+       %T/chips/msp430-small/pins
+--- ../tos430/tos/platforms/msp430f2013/hardware.h	2015-05-19 01:08:10.000000000 +0900
++++ ./tos/platforms/msp430f2013/hardware.h	2015-06-03 11:54:38.000000000 +0900
+@@ -39,9 +39,6 @@
+ 
+ #include "msp430hardware.h"
+ 
+-#undef USE_BIT_BANG_SPI_MASTER
+-#define USE_BIT_BANG_I2C_MASTER
+-
+ #endif // _H_hardware_h
+ 
+ /*
+--- ../tos430/tos/platforms/msp430f2013/PlatformSpiC.nc	2015-05-19 01:08:10.000000000 +0900
++++ ./tos/platforms/msp430f2013/PlatformSpiC.nc	2015-06-03 11:54:38.000000000 +0900
+@@ -1,22 +1,14 @@
+ /* -*- mode: nesc; mode: flyspell-prog; -*- */
+ 
+-#include "hardware.h"
+-
+-#ifdef USE_BIT_BANG_SPI_MASTER
+-#include_next "PlatformSpiC.nc"
+-#else
+-
+ #include "msp430usi.h"
+ 
+ configuration PlatformSpiC {
+-    provides {
+-        interface StdControl as SpiControl;
+-        interface SpiByte;
+-        interface SpiPacket;
+-    }
++    provides interface StdControl as SpiControl;
++    provides interface SpiByte;
++    provides interface SpiPacket;
+ }
+ implementation {
+-    components new Msp430Spi0C() as SpiC;
++    components new Msp430SpiC() as SpiC;
+     SpiByte = SpiC;
+     SpiPacket = SpiC;
+ 
+@@ -25,7 +17,6 @@
+     UsiConf.Msp430SpiConfigure <- SpiC;
+     UsiConf.SpiResource -> SpiC;
+ }
+-#endif
+ 
+ /*
+  * Local Variables:
+--- ../tos430/tos/platforms/msp430f2131/.platform	2015-05-19 01:08:10.000000000 +0900
++++ ./tos/platforms/msp430f2131/.platform	2015-06-03 11:54:38.000000000 +0900
+@@ -5,7 +5,7 @@
+       %T/platforms/msp430f2131
+       %T/platforms/msp430-common
+ 
+-      %T/chips/msp430-small/msp430f21x1
++      %T/chips/msp430-small/msp430x21x1
+ 
+       %T/chips/msp430-small
+       %T/chips/msp430-small/pins
+--- ../tos430/tos/platforms/msp430f2131/hardware.h	2015-05-19 01:08:10.000000000 +0900
++++ ./tos/platforms/msp430f2131/hardware.h	2015-06-03 11:54:38.000000000 +0900
+@@ -39,9 +39,6 @@
+ 
+ #include "msp430hardware.h"
+ 
+-#define USE_BIT_BANG_SPI_MASTER
+-#define USE_BIT_BANG_I2C_MASTER
+-
+ #endif // _H_hardware_h
+ 
+ /*
+--- ../tos430/tos/platforms/msp430f2132/.platform	2015-05-19 01:08:10.000000000 +0900
++++ ./tos/platforms/msp430f2132/.platform	2015-06-03 11:54:38.000000000 +0900
+@@ -5,7 +5,7 @@
+       %T/platforms/msp430f2132
+       %T/platforms/msp430-common
+ 
+-      %T/chips/msp430-small/msp430f21x2
++      %T/chips/msp430-small/msp430x21x2
+ 
+       %T/chips/msp430-small
+       %T/chips/msp430-small/pins
+@@ -15,7 +15,7 @@
+       %T/chips/msp430
+       %T/chips/msp430/pins
+       %T/chips/msp430/timer
+-      %T/chips/msp430/x2xxx/usci
++      %T/chips/msp430X/usci
+ 
+       %T/lib/gpio
+       %T/lib/timer
+--- ../tos430/tos/platforms/msp430f2132/hardware.h	2015-05-19 01:08:10.000000000 +0900
++++ ./tos/platforms/msp430f2132/hardware.h	2015-06-03 11:54:38.000000000 +0900
+@@ -40,9 +40,6 @@
+ #include "msp430hardware.h"
+ #include "msp430usci.h"
+ 
+-#undef USE_BIT_BANG_SPI_MASTER
+-#undef USE_BIT_BANG_I2C_MASTER
+-
+ #endif // _H_hardware_h
+ 
+ /*
+--- ../tos430/tos/platforms/msp430f2132/PlatformI2CC.nc	2015-05-19 01:08:10.000000000 +0900
++++ ./tos/platforms/msp430f2132/PlatformI2CC.nc	2015-06-03 11:54:38.000000000 +0900
+@@ -1,11 +1,5 @@
+ /* -*- mode: nesc; mode: flyspell-prog; -*- */
+ 
+-#include "hardware.h"
+-
+-#ifdef USE_BIT_BANG_I2C_MASTER
+-#include_next "PlatformI2CC.nc"
+-#else
+-
+ #include "msp430usci.h"
+ 
+ configuration PlatformI2CC {
+@@ -21,7 +15,6 @@
+     UsciConf.Msp430I2CConfigure <- I2CC;
+     UsciConf.I2CResource -> I2CC;
+ }
+-#endif
+ 
+ /*
+  * Local Variables:
+--- ../tos430/tos/platforms/msp430f2132/PlatformSpiC.nc	2015-05-19 01:08:10.000000000 +0900
++++ ./tos/platforms/msp430f2132/PlatformSpiC.nc	2015-06-03 11:54:38.000000000 +0900
+@@ -1,11 +1,5 @@
+ /* -*- mode: nesc; mode: flyspell-prog; -*- */
+ 
+-#include "hardware.h"
+-
+-#ifdef USE_BIT_BANG_SPI_MASTER
+-#include_next "PlatformSpiC.nc"
+-#else
+-
+ #include "msp430usci.h"
+ 
+ configuration PlatformSpiC {
+@@ -23,7 +17,6 @@
+     UsciConf.Msp430SpiConfigure <- SpiC;
+     UsciConf.SpiResource -> SpiC;
+ }
+-#endif
+ 
+ /*
+  * Local Variables:
+--- ../tos430/tos/platforms/msp430f2132/UsciConf.nc	2015-05-19 01:08:10.000000000 +0900
++++ ./tos/platforms/msp430f2132/UsciConf.nc	2015-06-03 11:54:38.000000000 +0900
+@@ -78,12 +78,12 @@
+         ucmode  : 3,			/* i2c mode */
+         ucmst   : 1,			/* master */
+         ucmm    : 0,			/* single master */
+-        ucsla10 : 0,			/* 7 bit slave address */
+-        uca10   : 0,			/* 7 bit own address */
++        ucsla10 : 1,			/* 10 bit slave */
++        uca10   : 1,			/* 10 bit us */
+         uctr    : 1,			/* tx mode to start */
+         ucssel  : 2,			/* SMCLK */
+         i2coa   : 1,			/* our address is 1 */
+-        ucgcen  : 0,			/* respond to general call */
++        ucgcen  : 1,			/* respond to general call */
+         }
+     };
+ 
+--- ../tos430/tos/platforms/msp430f2274/.platform	2015-05-19 01:08:10.000000000 +0900
++++ ./tos/platforms/msp430f2274/.platform	2015-06-03 11:54:38.000000000 +0900
+@@ -5,7 +5,7 @@
+       %T/platforms/msp430f2274
+       %T/platforms/msp430-common
+ 
+-      %T/chips/msp430-small/msp430f22x4
++      %T/chips/msp430-small/msp430x22x4
+ 
+       %T/chips/msp430-small
+       %T/chips/msp430-small/pins
+@@ -15,7 +15,7 @@
+       %T/chips/msp430
+       %T/chips/msp430/pins
+       %T/chips/msp430/timer
+-      %T/chips/msp430/x2xxx/usci
++      %T/chips/msp430X/usci
+ 
+       %T/lib/gpio
+       %T/lib/timer
+--- ../tos430/tos/platforms/msp430f2274/hardware.h	2015-05-19 01:08:10.000000000 +0900
++++ ./tos/platforms/msp430f2274/hardware.h	2015-06-03 11:54:38.000000000 +0900
+@@ -39,9 +39,6 @@
+ 
+ #include "msp430hardware.h"
+ 
+-#undef USE_BIT_BANG_SPI_MASTER
+-#undef USE_BIT_BANG_I2C_MASTER
+-
+ #endif // _H_hardware_h
+ 
+ /*
+--- ../tos430/tos/platforms/msp430f2274/PlatformSpiC.nc	2015-05-19 01:08:10.000000000 +0900
++++ ./tos/platforms/msp430f2274/PlatformSpiC.nc	2015-06-03 11:54:38.000000000 +0900
+@@ -1,11 +1,5 @@
+ /* -*- mode: nesc; mode: flyspell-prog; -*- */
+ 
+-#include "hardware.h"
+-
+-#ifdef USE_BIT_BANG_SPI_MASTER
+-#include_next "PlatformSpiC.nc"
+-#else
+-
+ #include "msp430usci.h"
+ 
+ configuration PlatformSpiC {
+@@ -23,7 +17,6 @@
+     UsciConf.Msp430SpiConfigure <- SpiC;
+     UsciConf.SpiResource -> SpiC;
+ }
+-#endif
+ 
+ /*
+  * Local Variables:
+--- ../tos430/tos/platforms/msp430f2274/UsciConf.nc	2015-05-19 01:08:10.000000000 +0900
++++ ./tos/platforms/msp430f2274/UsciConf.nc	2015-06-03 11:54:38.000000000 +0900
+@@ -8,10 +8,6 @@
+     provides interface StdControl as SpiControl;
+     provides interface Msp430SpiConfigure;
+     uses interface Resource as SpiResource;
+-
+-    provides interface StdControl as I2CControl;
+-    provides interface Msp430I2CConfigure;
+-    uses interface Resource as I2CResource;
+ }
+ implementation {
+     const msp430_uart_union_config_t uart_config = {
+@@ -71,36 +67,6 @@
+     async command const msp430_spi_union_config_t* Msp430SpiConfigure.getConfig() {
+         return &spi_config;
+     }
+-
+-    static const msp430_i2c_union_config_t i2c_config = {
+-        {
+-        ubr     : 2,			/* SMCLK/2 */
+-        ucmode  : 3,			/* i2c mode */
+-        ucmst   : 1,			/* master */
+-        ucmm    : 0,			/* single master */
+-        ucsla10 : 0,			/* 7 bit slave address */
+-        uca10   : 0,			/* 7 bit own address */
+-        uctr    : 1,			/* tx mode to start */
+-        ucssel  : 2,			/* SMCLK */
+-        i2coa   : 1,			/* our address is 1 */
+-        ucgcen  : 0,			/* respond to general call */
+-        }
+-    };
+-
+-    command error_t I2CControl.start() {
+-        return call I2CResource.immediateRequest();
+-    }
+-
+-    command error_t I2CControl.stop() {
+-        call I2CResource.release();
+-        return SUCCESS;
+-    }
+-
+-    event void I2CResource.granted() {}
+-
+-    async command const msp430_i2c_union_config_t* Msp430I2CConfigure.getConfig() {
+-        return &i2c_config;
+-    }
+ }
+ 
+ /*
+--- ../tos430/tos/platforms/msp430g2211/.platform	2015-05-19 01:08:10.000000000 +0900
++++ ./tos/platforms/msp430g2211/.platform	2015-06-03 11:54:38.000000000 +0900
+@@ -5,7 +5,7 @@
+       %T/platforms/msp430g2211
+       %T/platforms/msp430-common
+ 
+-      %T/chips/msp430-small/msp430g2x11
++      %T/chips/msp430-small/msp430g2xx1
+ 
+       %T/chips/msp430-small
+       %T/chips/msp430-small/pins
+--- ../tos430/tos/platforms/msp430g2211/hardware.h	2015-05-19 01:08:10.000000000 +0900
++++ ./tos/platforms/msp430g2211/hardware.h	2015-06-03 11:54:38.000000000 +0900
+@@ -40,9 +40,6 @@
+ 
+ #include "msp430hardware.h"
+ 
+-#define USE_BIT_BANG_SPI_MASTER
+-#define USE_BIT_BANG_I2C_MASTER
+-
+ #endif // _H_hardware_h
+ 
+ /*
+--- ../tos430/tos/platforms/msp430g2231/.platform	2015-05-19 01:08:10.000000000 +0900
++++ ./tos/platforms/msp430g2231/.platform	2015-06-03 11:54:38.000000000 +0900
+@@ -5,7 +5,7 @@
+       %T/platforms/msp430g2231
+       %T/platforms/msp430-common
+ 
+-      %T/chips/msp430-small/msp430g2x31
++      %T/chips/msp430-small/msp430g2xx1
+ 
+       %T/chips/msp430-small
+       %T/chips/msp430-small/pins
+--- ../tos430/tos/platforms/msp430g2231/hardware.h	2015-05-19 01:08:10.000000000 +0900
++++ ./tos/platforms/msp430g2231/hardware.h	2015-06-03 11:54:38.000000000 +0900
+@@ -39,9 +39,6 @@
+ 
+ #include "msp430hardware.h"
+ 
+-#define USE_BIT_BANG_SPI_MASTER
+-#define USE_BIT_BANG_I2C_MASTER
+-
+ #endif // _H_hardware_h
+ 
+ /*
+--- ../tos430/tos/platforms/msp430g2231/PlatformSpiC.nc	2015-05-19 01:08:10.000000000 +0900
++++ ./tos/platforms/msp430g2231/PlatformSpiC.nc	2015-06-03 11:54:38.000000000 +0900
+@@ -1,22 +1,14 @@
+ /* -*- mode: nesc; mode: flyspell-prog; -*- */
+ 
+-#include "hardware.h"
+-
+-#ifdef USE_BIT_BANG_SPI_MASTER
+-#include_next "PlatformSpiC.nc"
+-#else
+-
+ #include "msp430usi.h"
+ 
+ configuration PlatformSpiC {
+-    provides {
+-        interface StdControl as SpiControl;
+-        interface SpiByte;
+-        interface SpiPacket;
+-    }
++    provides interface StdControl as SpiControl;
++    provides interface SpiByte;
++    provides interface SpiPacket;
+ }
+ implementation {
+-    components new Msp430Spi0C() as SpiC;
++    components new Msp430SpiC() as SpiC;
+     SpiByte = SpiC;
+     SpiPacket = SpiC;
+ 
+@@ -25,7 +17,6 @@
+     UsiConf.Msp430SpiConfigure <- SpiC;
+     UsiConf.SpiResource -> SpiC;
+ }
+-#endif
+ 
+ /*
+  * Local Variables:
+--- ../tos430/tos/platforms/msp430g2452/.platform	2015-05-19 01:08:10.000000000 +0900
++++ ./tos/platforms/msp430g2452/.platform	2015-06-08 10:17:07.000000000 +0900
+@@ -1,34 +1,29 @@
+-# -*- mode:perl; -*-
+-
+-push( @includes, qw(
+-
++push( @includes, qw( 
+       %T/platforms/msp430g2452
+       %T/platforms/msp430-common
+-
+-      %T/chips/msp430-small/msp430g2x52
+-
++ 
++      %T/chips/msp430-small/msp430g2xx2
++ 
+       %T/chips/msp430-small
+       %T/chips/msp430-small/pins
+       %T/chips/msp430-small/timer
+-      %T/chips/msp430-small/usi
+-
++ 
+       %T/chips/msp430
+       %T/chips/msp430/pins
+       %T/chips/msp430/timer
+-
++ 
+       %T/lib/gpio
+       %T/lib/timer
+       %T/lib/power
+       %T/lib/misc
+ ) );
+-
+-@opts = qw(
++ 
++@opts = qw( 
+       -gcc=msp430-gcc
+       -mmcu=msp430g2452
+       -fnesc-target=msp430
+-      -fnesc-no-debug
+ );
+-
++ 
+ push @opts,
+     "-fnesc-scheduler=TinySchedulerC,TinySchedulerC.TaskBasic,TaskBasic,TaskBasic,runTask,postTask"
+     if !$with_scheduler_flag;
+--- ../tos430/tos/platforms/msp430g2452/hardware.h	2015-05-19 01:08:10.000000000 +0900
++++ ./tos/platforms/msp430g2452/hardware.h	2015-06-03 11:54:38.000000000 +0900
+@@ -39,9 +39,6 @@
+ 
+ #include "msp430hardware.h"
+ 
+-#define USE_BIT_BANG_SPI_MASTER
+-#undef USE_BIT_BANG_I2C_MASTER
+-
+ #endif // _H_hardware_h
+ 
+ /*
+--- ../tos430/tos/platforms/msp430g2452/PlatformSpiC.nc	2015-05-19 01:08:10.000000000 +0900
++++ ./tos/platforms/msp430g2452/PlatformSpiC.nc	2015-06-03 11:54:38.000000000 +0900
+@@ -1,22 +1,14 @@
+ /* -*- mode: nesc; mode: flyspell-prog; -*- */
+ 
+-#include "hardware.h"
+-
+-#ifdef USE_BIT_BANG_SPI_MASTER
+-#include_next "PlatformSpiC.nc"
+-#else
+-
+ #include "msp430usi.h"
+ 
+ configuration PlatformSpiC {
+-    provides {
+-        interface StdControl as SpiControl;
+-        interface SpiByte;
+-        interface SpiPacket;
+-    }
++    provides interface StdControl as SpiControl;
++    provides interface SpiByte;
++    provides interface SpiPacket;
+ }
+ implementation {
+-    components new Msp430Spi0C() as SpiC;
++    components new Msp430SpiC() as SpiC;
+     SpiByte = SpiC;
+     SpiPacket = SpiC;
+ 
+@@ -25,7 +17,6 @@
+     UsiConf.Msp430SpiConfigure <- SpiC;
+     UsiConf.SpiResource -> SpiC;
+ }
+-#endif
+ 
+ /*
+  * Local Variables:
+--- ../tos430/tos/system/LedsC.nc	2015-05-19 01:08:10.000000000 +0900
++++ ./tos/system/LedsC.nc	2015-06-03 14:55:44.000000000 +0900
+@@ -51,14 +51,8 @@
+   Leds = LedsP;
+ 
+   LedsP.Init <- PlatformLedsC.Init;
+-#if 0 < PLATFORM_LED_COUNT
+   LedsP.Led0 -> PlatformLedsC.Led0;
+-#if 1 < PLATFORM_LED_COUNT
+   LedsP.Led1 -> PlatformLedsC.Led1;
+-#if 2 < PLATFORM_LED_COUNT
+-  LedsP.Led2 -> PlatformLedsC.Led2;
+-#endif
+-#endif
+-#endif
++/* LedsP.Led2 -> PlatformLedsC.Led2; YABAI */
+ }
+ 
+--- ../tos430/tos/system/LedsP.nc	2015-05-19 01:08:10.000000000 +0900
++++ ./tos/system/LedsP.nc	2015-06-03 15:12:35.000000000 +0900
+@@ -47,33 +47,21 @@
+     interface Leds;
+   }
+   uses {
+-#if 0 < PLATFORM_LED_COUNT
+     interface GeneralIO as Led0;
+-#if 1 < PLATFORM_LED_COUNT
+     interface GeneralIO as Led1;
+-#if 2 < PLATFORM_LED_COUNT
+-    interface GeneralIO as Led2;
+-#endif
+-#endif
+-#endif
++/*    interface GeneralIO as Led2; YABAI*/
+   }
+ }
+ implementation {
+   command error_t Init.init() {
+     atomic {
+       dbg("Init", "LEDS: initialized.\n");
+-#if 0 < PLATFORM_LED_COUNT
+       call Led0.makeOutput();
+-      call Led0.set();
+-#if 1 < PLATFORM_LED_COUNT
+       call Led1.makeOutput();
++/*      call Led2.makeOutput(); YABAI*/
++      call Led0.set();
+       call Led1.set();
+-#if 2 < PLATFORM_LED_COUNT
+-      call Led2.makeOutput();
+-      call Led2.set();
+-#endif
+-#endif
+-#endif
++/*      call Led2.set(); YABAI */
+     }
+     return SUCCESS;
+   }
+@@ -83,7 +71,6 @@
+ #define DBGLED(n) \
+   dbg("LedsC", "LEDS: Led" #n " %s.\n", call Led ## n .get() ? "off" : "on");
+ 
+-#if 0 < PLATFORM_LED_COUNT
+   async command void Leds.led0On() {
+     call Led0.clr();
+     DBGLED(0);
+@@ -99,7 +86,6 @@
+     DBGLED(0);
+   }
+ 
+-#if 1 < PLATFORM_LED_COUNT
+   async command void Leds.led1On() {
+     call Led1.clr();
+     DBGLED(1);
+@@ -115,74 +101,58 @@
+     DBGLED(1);
+   }
+ 
+-#if 2 < PLATFORM_LED_COUNT
+   async command void Leds.led2On() {
+-    call Led2.clr();
+-    DBGLED(2);
++/*    call Led2.clr(); YABAI 
++    DBGLED(2); */
+   }
+ 
+   async command void Leds.led2Off() {
+-    call Led2.set();
+-    DBGLED(2);
++/*    call Led2.set(); YABAI
++    DBGLED(2); */
+   }
+ 
+   async command void Leds.led2Toggle() {
+-    call Led2.toggle();
+-    DBGLED(2);
++/*    call Led2.toggle(); YABAI
++    DBGLED(2); */
+   }
+-#endif
+-#endif
+-#endif
+ 
+   async command uint8_t Leds.get() {
+     uint8_t rval;
+     atomic {
+       rval = 0;
+-#if 0 < PLATFORM_LED_COUNT
+       if (!call Led0.get()) {
+-        rval |= LEDS_LED0;
++	rval |= LEDS_LED0;
+       }
+-#if 1 < PLATFORM_LED_COUNT
+       if (!call Led1.get()) {
+-        rval |= LEDS_LED1;
++	rval |= LEDS_LED1;
+       }
+-#if 2 < PLATFORM_LED_COUNT
+-      if (!call Led2.get()) {
+-        rval |= LEDS_LED2;
+-      }
+-#endif
+-#endif
+-#endif
++/*      if (!call Led2.get()) {
++	rval |= LEDS_LED2;
++      } YABAI */
+     }
+     return rval;
+   }
+ 
+   async command void Leds.set(uint8_t val) {
+     atomic {
+-#if 0 < PLATFORM_LED_COUNT
+       if (val & LEDS_LED0) {
+-        call Leds.led0On();
++	call Leds.led0On();
+       }
+       else {
+-        call Leds.led0Off();
++	call Leds.led0Off();
+       }
+-#if 1 < PLATFORM_LED_COUNT
+       if (val & LEDS_LED1) {
+-        call Leds.led1On();
++	call Leds.led1On();
+       }
+       else {
+-        call Leds.led1Off();
++	call Leds.led1Off();
+       }
+-#if 2 < PLATFORM_LED_COUNT
+       if (val & LEDS_LED2) {
+-        call Leds.led2On();
++	call Leds.led2On();
+       }
+       else {
+-        call Leds.led2Off();
++	call Leds.led2Off();
+       }
+-#endif
+-#endif
+-#endif
+     }
+   }
+ }
