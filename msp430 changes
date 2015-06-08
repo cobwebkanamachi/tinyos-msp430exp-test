@@ -1,3 +1,6 @@
+tos430 means "https://github.com/tgtakaoka/tinyos-msp430" directory.
+current directory is changed.
+
 --- ../tos430/support/make/msp/mspdebug.extra	2015-05-19 01:08:10.000000000 +0900
 +++ ./support/make/msp/mspdebug.extra	2015-06-03 13:34:38.000000000 +0900
 @@ -9,7 +9,7 @@
