@@ -50,9 +50,15 @@ http://gnutoolchains.com/msp430/
 notices
 1. Please check your launchpad's jumper pins.
    I did not know how to configure jumpers.
-   So I fail test.
+   So I fail test for few days.
    If you have version 1.5 above of launchpad, you follow silk print around jumper.
 2. I have version 1.5 launchpad, bellow is my case.
-   all jumper make short.
-   rx, tx jumpers are dependent on your used MCU.
-   if 2542 you use, rx and tx jumper should be horizontal.
+   First all jumper make short, then change rx, tx jumpers are dependent on your used MCU.
+   If G2553 you use, rx and tx jumper should be horizontal.
+   Like = = || || || (ver.1.5 board)
+   If G2452 you use, rx and rx jumper should be vertical.
+   Like || || || || || (ver.1.5 board)
+3. http://processors.wiki.ti.com/index.php/MSP430_-_G2xx_BSL
+   "Flashing BSL code" shows jumper direction for board revision.
+  
+
