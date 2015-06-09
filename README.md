@@ -32,4 +32,9 @@ a. release to msp430 diff list
 b. blink change diff list
 c. experimental Program MSP-EXP430G2-LaunchPad script(batch file)
 
+reference
+http://nslab.ee.ntu.edu.tw/courses/wsn-labs-fall-07/slides/TinyOS.ppt
+https://0x7d.com/2013/12/running-tinyos-on-msp430-launchpads/
+https://github.com/tgtakaoka/tinyos-msp430
+https://github.com/tinyos/tinyos-releas
 
