@@ -13,6 +13,13 @@ Linux XubunTOS 3.2.0-38-generic #61-Ubuntu SMP Tue Feb 19 12:20:02 UTC 2013 i686
 Firmware Writing Environment:
 Windows8.1 with MSP-EXP430G2 Software Examples v2.03.00
 TinyOS Version: 2.1.2 (tinyos-release)
+added 2015/06/09:
+I test mspdebug in the "Prebuilt GNU toolchain for msp430" distributed bellow.
+http://gnutoolchains.com/msp430/
+Invoke mspdebug with tilib option.
+You could debug main.elf(rename main.ihex to main.elf) and load main.elf.
+Then you can run.
+I test Blink of Tinyos with this.
 
 synopsis
 1. download these zip files from each github repository.
@@ -38,4 +45,14 @@ https://0x7d.com/2013/12/running-tinyos-on-msp430-launchpads/<BR>
 https://github.com/tgtakaoka/tinyos-msp430<BR>
 https://github.com/tinyos/tinyos-releas<BR>
 http://tinyos.stanford.edu/tinyos-wiki/index.php/Installing_XubunTOS_%28with_TinyOS_from_tp-freeforall/prod_repository%29_in_VirtualBox<BR>
+http://gnutoolchains.com/msp430/
 
+notices
+1. Please check your launchpad's jumper pins.
+   I did not know how to configure jumpers.
+   So I fail test.
+   If you have version 1.5 above of launchpad, you follow silk print around jumper.
+2. I have version 1.5 launchpad, bellow is my case.
+   all jumper make short.
+   rx, tx jumpers are dependent on your used MCU.
+   if 2542 you use, rx and tx jumper should be horizontal.
