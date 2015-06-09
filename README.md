@@ -46,6 +46,7 @@ https://github.com/tgtakaoka/tinyos-msp430<BR>
 https://github.com/tinyos/tinyos-releas<BR>
 http://tinyos.stanford.edu/tinyos-wiki/index.php/Installing_XubunTOS_%28with_TinyOS_from_tp-freeforall/prod_repository%29_in_VirtualBox<BR>
 http://gnutoolchains.com/msp430/
+http://www.essp.utdallas.edu/uploads/CE4370/Fall10/Tutorialv0_2.pdf
 
 notices
 1. Please check your launchpad's jumper pins.<BR>
