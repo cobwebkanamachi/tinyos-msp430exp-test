@@ -48,17 +48,15 @@ http://tinyos.stanford.edu/tinyos-wiki/index.php/Installing_XubunTOS_%28with_Tin
 http://gnutoolchains.com/msp430/
 
 notices
-1. Please check your launchpad's jumper pins.
-   I did not know how to configure jumpers.
-   So I fail test for few days.
-   If you have version 1.5 above of launchpad, you follow silk print around jumper.
-2. I have version 1.5 launchpad, bellow is my case.
-   First all jumper make short, then change rx, tx jumpers are dependent on your used MCU.
-   If G2553 you use, rx and tx jumper should be horizontal.
-   Like = = || || || (ver.1.5 board)
-   If G2452 you use, rx and rx jumper should be vertical.
-   Like || || || || || (ver.1.5 board)
-3. http://processors.wiki.ti.com/index.php/MSP430_-_G2xx_BSL
-   "Flashing BSL code" shows jumper direction for board revision.
-  
-
+1. Please check your launchpad's jumper pins.<BR>
+   I did not know how to configure jumpers.<BR>
+   So I fail test for few days.<BR>
+   If you have version 1.5 above of launchpad, you follow silk print around jumper.<BR>
+2. I have version 1.5 launchpad, bellow is my case.<BR>
+   First all jumper make short, then change rx, tx jumpers are dependent on your used MCU.<BR>
+   If G2553 you use, rx and tx jumper should be horizontal.<BR>
+   Like = = || || || (ver.1.5 board)<BR>
+   If G2452 you use, rx and rx jumper should be vertical.<BR>
+   Like || || || || || (ver.1.5 board)<BR>
+3. http://processors.wiki.ti.com/index.php/MSP430_-_G2xx_BSL<BR>
+   "Flashing BSL code" shows jumper direction for board revision.<BR>
